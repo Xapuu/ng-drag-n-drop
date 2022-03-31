@@ -2,21 +2,23 @@
 
 
 
-<div class="drag-n-drop-container" [style]="{height: height + 'px', width: width + 'px'}">
+<div class="drag-n-drop-container" [style]="{height: height + 'px', width: width + 'px',
+'background-size': backgroundSize
+}">
   <ng-container *ngFor="let item of items; let i = index">
-    <app-tile cdkDrag
-    cdkDragBoundary=".drag-n-drop-container"
-    [cdkDragFreeDragPosition]="{
+    <app-tile class="app-tile-card" cdkDrag cdkDragBoundary=".drag-n-drop-container" [item]="item" [cdkDragFreeDragPosition]="{
       y:item.y,
       x:item.x
-    }"
-    (cdkDragMoved)="handleMove($event, i)" (cdkDragEnded)="handleDrop($event, i)"  [width]="item.width" [height]="item.height" [background]="item.color">
-      <h1>{{item.label}}</h1>
+    }" (cdkDragMoved)="handleMove($event, item.id)" (cdkDragEnded)="handleDrop($event, item.id)" (cdkDragStarted)="dragStart($event, item.id)" [gridStep]="gridStep"
+      [width]="item.width" [height]="item.height" [background]="item.color">
+      {{item.label}}
     </app-tile>
   </ng-container>
 </div>
 
-
+<pre>
+  {{items | json}}
+</pre>
 
 <div style="background-color: aqua; margin-top: 20px; width: 100%; height: 200px;">
 

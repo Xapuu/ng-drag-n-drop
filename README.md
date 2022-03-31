@@ -1,6 +1,5 @@
 # TODO
 
-
 ## Auto expand when out of boundaries
   ### When the drop location is below 0 y expand with n grid cells and move all items n distance on the y axis
   ### When the drop location is out of the gridHeight expand the grid height with the height of the item + the drop location
@@ -15,3 +14,7 @@
 ## Create boundaries // Or use the auto expand
 ## Move to new line if there is no space
 ## Vertical movement
+
+
+## Try adding placeholder for the future location??
+  -- It will be usefully for debugging

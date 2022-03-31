@@ -1,9 +1,21 @@
-<div [style]="{
-  width: (width * 50) + 'px',
-  height: (height * 50) + 'px',
-  background: background
+<div *ngIf="item.type === 'PLACEHOLDER'"  [style]="{
+  width: (width * gridStep - 20) + 'px',
+  height: (height * gridStep - 20) + 'px'
 }">
 
-  <ng-content></ng-content>
+  <div class="placeholder" [style]="{'min-width': '100%', 'min-height': '100%', margin: '6px'}">
+  </div>
+
+
+</div>
+
+<div *ngIf="item.type !== 'PLACEHOLDER'" [style]="{
+  width: (width * gridStep - 20) + 'px',
+  height: (height * gridStep - 20) + 'px'
+}">
+  <div [style]="{width: '100%', height: '100%', background: background, margin: '10px'}">
+    <ng-content></ng-content>
+  </div>
+
 
 </div>

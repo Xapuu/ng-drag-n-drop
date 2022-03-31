@@ -11,9 +11,30 @@ body {
     linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
     linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
     linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(transparent 3px, #f2f2f2 3px, #f2f2f2 78px, transparent 78px),
+    linear-gradient(
+      transparent 3px,
+      #f2f2f2 3px,
+      #f2f2f2 78px,
+      transparent 78px
+    ),
     linear-gradient(-90deg, #aaa 1px, transparent 1px),
-    linear-gradient(-90deg, transparent 3px, #f2f2f2 3px, #f2f2f2 78px, transparent 78px),
+    linear-gradient(
+      -90deg,
+      transparent 3px,
+      #f2f2f2 3px,
+      #f2f2f2 78px,
+      transparent 78px
+    ),
     linear-gradient(#aaa 1px, transparent 1px), #f2f2f2;
-  background-size: 4px 4px, 4px 4px, 50px 50px, 50px 50px, 50px 50px, 50px 50px, 50px 50px, 50px 50px;
+  background-size: 10px 10px, 10px 10px, 100px 100px, 100px 100px, 100px 100px,
+    100px 100px, 100px 100px, 100px 100px;
 }
+
+// Moves the  item in drag to the top
+.cdk-drag-dragging {
+  z-index: 99999;
+}
+
+// .app-tile-card {
+//   transition: all 0.3s;
+// }

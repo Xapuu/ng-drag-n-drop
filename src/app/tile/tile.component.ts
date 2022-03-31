@@ -10,7 +10,9 @@ export class TileComponent implements OnInit {
 
   @Input() width = 1;
   @Input() height = 1;
+  @Input() gridStep = 50;
   @Input() background = 'red';
+  @Input() item: any;
 
   constructor() { }
 
